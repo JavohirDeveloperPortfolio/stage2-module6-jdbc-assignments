@@ -29,6 +29,7 @@ public class CustomDataSource implements DataSource {
         this.url = url;
         this.password = password;
         this.name = name;
+        instance = this;
     }
 
     public static CustomDataSource getInstance() {
