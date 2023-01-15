@@ -5,23 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class CustomConnector {
-    private Connection connection;
 
-    public Connection getConnection(String url) {
-        try {
-            return DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
+    public Connection getConnection(String url) throws SQLException {
+        Connection conn = DriverManager.getConnection(url);
+        return conn;
     }
 
-    public Connection getConnection(String url, String user, String password)  {
-        try {
-            return DriverManager.getConnection(url, user, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
+    public Connection getConnection(String url, String user, String password) throws SQLException {
+        Connection conn = DriverManager.getConnection(url, user, password);
+        return conn;
     }
 }
